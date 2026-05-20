@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 - 王晨宇</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #2c2c2c;
+            --text-secondary: #666;
+            --accent: #3b5998;
+            --accent-light: #e8ecf4;
+            --border: #e0e0e0;
+            --card-bg: #fff;
+            --block-blue: #dce8f5;
+            --block-teal: #d5f0e8;
+            --block-coral: #fce4dc;
+            --block-amber: #fdf0d5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ---- Large Decorative Blocks ---- */
+        .deco {
+            position: absolute;
+            border-radius: 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .deco-1 {
+            top: 60px; right: -60px;
+            width: 240px; height: 140px;
+            background: var(--block-coral);
+            border-radius: 24px;
+        }
+        .deco-2 {
+            top: 340px; left: -50px;
+            width: 160px; height: 180px;
+            background: var(--block-teal);
+            border-radius: 20px;
+        }
+        .deco-3 {
+            top: 500px; right: 80px;
+            width: 180px; height: 90px;
+            background: var(--block-amber);
+            border-radius: 16px;
+        }
+        .deco-4 {
+            top: 700px; left: 50%;
+            transform: translateX(-50%);
+            width: 300px; height: 60px;
+            background: var(--block-blue);
+            border-radius: 14px;
+        }
+        .deco-5 {
+            top: 880px; right: -40px;
+            width: 200px; height: 130px;
+            background: var(--block-teal);
+            border-radius: 20px;
+        }
+        .deco-6 {
+            top: 1000px; left: -60px;
+            width: 140px; height: 200px;
+            background: var(--block-coral);
+            border-radius: 22px;
+        }
+        .deco-7 {
+            top: 1200px; right: 120px;
+            width: 220px; height: 80px;
+            background: var(--block-amber);
+            border-radius: 14px;
+        }
+        .deco-8 {
+            top: 1350px; left: 30px;
+            width: 180px; height: 180px;
+            background: var(--block-blue);
+            border-radius: 24px;
+        }
+        .deco-9 {
+            bottom: 80px; right: -50px;
+            width: 170px; height: 140px;
+            background: var(--block-teal);
+            border-radius: 20px;
+        }
+
+        /* ---- Hero with Image Background ---- */
+        .hero {
+            position: relative;
+            padding: 80px 24px 100px;
+            text-align: center;
+            z-index: 1;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.78) 100%),
+                url('ustb-bg.png') center/cover no-repeat;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.9);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            color: var(--text);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 8px 24px;
+            border: 1px solid var(--accent);
+            border-radius: 24px;
+            font-size: 14px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: linear-gradient(90deg, var(--block-coral) 0%, var(--block-amber) 50%, var(--block-teal) 100%);
+            z-index: 1;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 14px;
+            background: var(--block-blue);
+            border-radius: 7px;
+            z-index: 1;
+        }
+
+        /* ---- Container ---- */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---- Section ---- */
+        .section {
+            padding: 52px 0;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+        .section:last-of-type { border-bottom: none; }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--accent);
+            margin-bottom: 32px;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 120%;
+            height: 4px;
+            background: var(--block-coral);
+            border-radius: 2px;
+        }
+
+        /* ---- Info Grid ---- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 36px;
+            position: relative;
+        }
+        .info-item {
+            display: flex;
+            font-size: 15px;
+        }
+        .info-label {
+            color: var(--text-secondary);
+            min-width: 64px;
+            flex-shrink: 0;
+        }
+        .info-value {
+            color: var(--text);
+        }
+
+        /* ---- Big Block behind info section ---- */
+        .info-bg-block {
+            position: absolute;
+            top: -30px;
+            right: -40px;
+            width: 120px;
+            height: 180px;
+            background: var(--block-blue);
+            border-radius: 30px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ---- Education ---- */
+        .edu-block {
+            margin-bottom: 24px;
+            position: relative;
+            padding: 24px 26px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .edu-block::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            width: 60px;
+            height: 10px;
+            background: var(--block-amber);
+            border-radius: 5px;
+        }
+        .edu-school {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .edu-major {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .edu-detail {
+            margin-top: 16px;
+            font-size: 15px;
+            color: var(--text);
+        }
+        .edu-detail li {
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        .edu-detail li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* ---- Big teal block behind education ---- */
+        .edu-bg-block {
+            position: absolute;
+            bottom: -20px;
+            left: -50px;
+            width: 160px;
+            height: 100px;
+            background: var(--block-teal);
+            border-radius: 24px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ---- Skills ---- */
+        .skill-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .skill-group:last-child { margin-bottom: 0; }
+        .skill-group h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+            display: inline-block;
+            position: relative;
+        }
+        .skill-group h3::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--block-teal);
+            border-radius: 2px;
+        }
+        .skill-group p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .skill-tag {
+            font-size: 13px;
+            padding: 6px 16px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ---- Big amber block behind skills ---- */
+        .skills-bg-block {
+            position: absolute;
+            top: 40px;
+            right: -40px;
+            width: 140px;
+            height: 140px;
+            background: var(--block-amber);
+            border-radius: 28px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ---- Highlight box ---- */
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            border-radius: 0 10px 10px 0;
+            font-size: 15px;
+            color: var(--text);
+            margin-top: 18px;
+            line-height: 2;
+            position: relative;
+        }
+        .highlight-box::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            background: var(--block-coral);
+            border-radius: 10px;
+        }
+
+        /* ---- Footer ---- */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            color: #aaa;
+            font-size: 13px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 540px) {
+            .hero { padding: 60px 20px 80px; }
+            .hero h1 { font-size: 28px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .section { padding: 38px 0; }
+            .deco { display: none; }
+            .info-bg-block, .edu-bg-block, .skills-bg-block { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Large decorative floating color blocks -->
+    <div class="deco deco-1"></div>
+    <div class="deco deco-2"></div>
+    <div class="deco deco-3"></div>
+    <div class="deco deco-4"></div>
+    <div class="deco deco-5"></div>
+    <div class="deco deco-6"></div>
+    <div class="deco deco-7"></div>
+    <div class="deco deco-8"></div>
+    <div class="deco deco-9"></div>
+
+    <!-- Hero with USTB background image -->
+    <header class="hero">
+        <img class="avatar" src="photo.jpg" alt="个人照片">
+        <h1>王晨宇</h1>
+        <p class="subtitle">北京科技大学 · 纳米材料与技术 · 2025届</p>
+        <span class="tagline">勤于学习 · 勇于实践</span>
+    </header>
+
+    <!-- Basic Info -->
+    <div class="container">
+        <section class="section" style="position:relative;">
+            <div class="info-bg-block"></div>
+            <h2 class="section-title">基本信息</h2>
+            <div class="info-grid" style="position:relative;z-index:1;">
+                <div class="info-item">
+                    <span class="info-label">姓名</span>
+                    <span class="info-value">王晨宇</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">性别</span>
+                    <span class="info-value">男</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">民族</span>
+                    <span class="info-value">汉族</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">籍贯</span>
+                    <span class="info-value">山西长治</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">学校</span>
+                    <span class="info-value">北京科技大学</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">专业</span>
+                    <span class="info-value">纳米材料与技术</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">届别</span>
+                    <span class="info-value">2025届</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">现居</span>
+                    <span class="info-value">北京朝阳区</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">政治面貌</span>
+                    <span class="info-value">共青团员</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">电话</span>
+                    <span class="info-value">15811355225</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section" style="position:relative;">
+            <div class="edu-bg-block"></div>
+            <h2 class="section-title">教育经历</h2>
+            <div class="edu-block" style="position:relative;z-index:1;">
+                <div class="edu-school">北京科技大学</div>
+                <div class="edu-major">纳米材料与技术 · 2025届</div>
+                <ul class="edu-detail">
+                    <li>大一学年加权排名 <strong>前 28%</strong></li>
+                    <li>大一担任班级 <strong>学习委员</strong></li>
+                    <li>获得 <strong>人民奖学金三等奖</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" style="position:relative;">
+            <div class="skills-bg-block"></div>
+            <h2 class="section-title">技术能力</h2>
+            <div class="skill-group" style="position:relative;z-index:1;">
+                <h3>编程基础</h3>
+                <p>掌握 C 语言和 Python 基础，具备扎实的程序设计思维，能够快速上手新框架与工具。</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">C 语言</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">微信小程序</span>
+                </div>
+            </div>
+            <div class="skill-group" style="position:relative;z-index:1;">
+                <h3>AI 辅助开发</h3>
+                <p>熟练使用 Claude Code、DSv4 等大模型工具加速编码与调试，能够高效地将想法从原型转化为可用的代码产物。</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Claude Code</span>
+                    <span class="skill-tag">DSv4</span>
+                    <span class="skill-tag">AI 辅助编程</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attitude -->
+        <section class="section">
+            <h2 class="section-title">自我评价</h2>
+            <p style="font-size:15px;color:var(--text-secondary);line-height:2;">
+                我深知团队社会实践时间紧凑，承诺在实践过程中投入大量精力、持续学习，
+                积极与调研组同学沟通，快速响应需求，做好技术支持与迭代。
+            </p>
+            <div class="highlight-box">
+                <strong>学习热情：</strong>虽然目前没有成熟的项目作品，但我有非常强烈的学习意愿，
+                期待在实践中快速成长，为团队开发出实用、好用的工具。<br>
+                <strong>责任心：</strong>对待每一个任务认真负责，乐于主动沟通和推进进度。
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>感谢您的阅读 · 期待与您交流</p>
+    </footer>
+
+</body>
+</html>
